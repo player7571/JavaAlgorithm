@@ -55,11 +55,11 @@ public class Main {
         }
         while (!queue.isEmpty()){
             int[] now = queue.poll();
-            copy[now[0]][now[1]] = 2;
             for(int i=0; i<4; i++){
                 int x = now[0]+dx[i];
                 int y = now[1]+dy[i];
                 if(x>=0&&y>=0&&x<N&&y<M&&copy[x][y]==0){
+                    copy[x][y] = 2;
                     queue.add(new int[]{x, y});
                 }
             }
